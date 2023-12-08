@@ -11,3 +11,4 @@
       ansible.builtin.systemd_service:
         name: httpd
         state: started
+        enabled: true
