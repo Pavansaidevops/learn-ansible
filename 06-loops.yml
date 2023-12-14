@@ -1,0 +1,27 @@
+- name: Demo On Loops
+  hosts: local host
+  connection: local
+  vars:
+    fruits:
+      - orange
+      - guava
+  tasks:
+    - name: Print Fruits
+      ansible.builtin.debug:
+        msg: Fruit Name - "{{ item }}"
+      loop: "{{ fruits }}"
+
+    - name: Print Fruits Local Values
+      ansible.builtin.debug:
+        msg: Fruit Name - "{{ item }}"
+      loop:
+        - banana
+        - kiwi
+
+    - name: Print Fruit Name and Quantity
+      ansible.builtin.debug:
+        msg: Fruit Name - "{{ item.name }}", Quantity - "{{ quantity.name }}"
+      loop:
+        - { name: "orange", quantity: 100 }
+        - { name: "guava", quantity: 200 }
+
