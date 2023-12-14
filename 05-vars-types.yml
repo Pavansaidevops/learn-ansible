@@ -1,3 +1,4 @@
+# Variable Types
 - name: Variable Types
   hosts: local host
   connection: local
